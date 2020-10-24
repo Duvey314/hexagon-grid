@@ -62,7 +62,7 @@ class HexGrid:
         return(neighbors)
     
     def get_dist(self,a,b):
-        return (abs(a.x-b.x) + abs(a.y-b.y) + abs(a.z-b.z))/2
+        return int((abs(a.x-b.x) + abs(a.y-b.y) + abs(a.z-b.z))/2)
 
     def rotate_grid(self,times=1):
         for i in range(times):
@@ -94,6 +94,13 @@ class HexGrid:
         for obj in self.grid:
             if obj.id == hex_id:
                 return obj
+
+    def ret_line(self, a, b):
+        N = self.get_dist(a,b)
+        results = []
+        for x in range(N+1):
+            results.append()
+        return results
 
 # def cube_round(self, (x, y, z)=(0, 0, 0)):
     #     rx = round(x)
